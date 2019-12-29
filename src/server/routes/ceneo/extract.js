@@ -22,9 +22,6 @@ async function extractedReviewsCount(dbConnector, phrase, pagesToSearch) {
 }
 
 async function clearTables(dbConnector) {
-    dbConnector.none('DELETE FROM products;')
-        .then(() => console.log("Delete products"))
-        .catch(() => console.log("Error while deleting from table products"));
     dbConnector.none('DELETE FROM reviews_extract;')
         .then(() => console.log("Delete reviews_extract"))
         .catch(() => console.log("Error while deleting from table reviews_extract"));

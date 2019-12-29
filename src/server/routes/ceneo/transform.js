@@ -37,7 +37,6 @@ module.exports = async function (req, res) {
 
 function transformReviewedAfter(reviewedAfterInMillis) {
     if (reviewedAfterInMillis !== undefined && reviewedAfterInMillis !== null) {
-        console.log(Math.floor(Number(reviewedAfterInMillis) / 86400000));
         return Math.floor(Number(reviewedAfterInMillis) / 86400000);
     }
     return reviewedAfterInMillis;
