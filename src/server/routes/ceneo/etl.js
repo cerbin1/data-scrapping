@@ -28,7 +28,7 @@ async function wholeProcess(res, products) {
             rating: product.rating,
             price: product.price
         }).catch(function () {
-                return res.json("Error");
+                console.log("Error while insert into products");
             }
         );
 
@@ -73,6 +73,13 @@ function transformRating(rating) {
     return Number.isNaN(parsedRating) ? null : parsedRating;
 }
 
+function transformReviewedAfter(reviewedAfterInMillis) {
+    if (reviewedAfterInMillis !== undefined && reviewedAfterInMillis !== null) {
+        return Math.floor(Number(reviewedAfterInMillis) / 86400000);
+    }
+    return reviewedAfterInMillis;
+}
+
 function transform(reviews) {
     let transformedReviews = [];
     reviews.forEach(review => {
@@ -82,7 +89,7 @@ function transform(reviews) {
             rating: transformRating(review.rating),
             usefulness: {upvotes: review.usefulness.upvotes, downvotes: review.usefulness.downvotes},
             date: review.date,
-            reviewedAfter: review.reviewedAfter,
+            reviewedAfter: transformReviewedAfter(review.reviewedAfter),
             text: review.text,
             didUserBuyTheProduct: review.didUserBuyTheProduct
         };
