@@ -35,6 +35,14 @@ module.exports = async function (req, res) {
         );
 };
 
+function transformReviewedAfter(reviewedAfterInMillis) {
+    if (reviewedAfterInMillis !== undefined && reviewedAfterInMillis !== null) {
+        console.log(Math.floor(Number(reviewedAfterInMillis) / 86400000));
+        return Math.floor(Number(reviewedAfterInMillis) / 86400000);
+    }
+    return reviewedAfterInMillis;
+}
+
 function transformSingleStep(reviews) {
     let transformedReviews = [];
     reviews.forEach(review => {
@@ -46,7 +54,7 @@ function transformSingleStep(reviews) {
             upvotes: review.upvotes,
             downvotes: review.downvotes,
             date: review.date,
-            reviewedAfter: review.reviewedafter,
+            reviewedAfter: transformReviewedAfter(review.reviewedafter),
             content: review.content,
             reviewerBoughtProduct: review.reviewerboughtproduct,
             productId: review.productid
