@@ -27,7 +27,7 @@ module.exports = async function (req, res) {
             dbConnector.none('DELETE FROM reviews_extract')
                 .then(() => console.log('DELETE FROM reviews_extract'))
                 .catch(() => console.log("Error while deleting from reviews_extract"));
-            return res.json(reviews.length);
+            return res.json({reviews: reviews.length});
         })
         .catch(function () {
                 console.log("Error while selecting from reviews_extract");

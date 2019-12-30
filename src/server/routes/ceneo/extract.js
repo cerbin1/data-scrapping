@@ -47,6 +47,9 @@ async function clearTables(dbConnector) {
     dbConnector.none('DELETE FROM products_temp')
         .then(() => console.log("Delete products_temp"))
         .catch(() => console.log("Error while deleting from table products_temp"));
+    dbConnector.none('DELETE FROM reviews_transform')
+        .then(() => console.log("Delete reviews_transform"))
+        .catch(() => console.log("Error while deleting from table reviews_transform"));
 }
 
 async function extractStep(dbConnector, phrase, pagesToSearch) {
