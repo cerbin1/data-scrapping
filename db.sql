@@ -20,6 +20,15 @@
     	PRIMARY KEY (id),
     	FOREIGN KEY (productId) REFERENCES products(id));
 
+
+    CREATE TABLE products_temp (
+        id bigint  NOT NULL,
+        name text  NULL,
+        description text  NULL,
+        rating double precision  NULL,
+        price double precision  NULL,
+        PRIMARY KEY (id));
+
     CREATE TABLE reviews_extract(
         id bigint  NOT NULL,
         avatar text  NULL,

@@ -14,5 +14,8 @@ module.exports = async function (req, res) {
     dbConnector.none('DELETE FROM products;')
         .then(() => console.log("Delete products"))
         .catch(() => console.log("Error while deleting from table products"));
+    dbConnector.none('DELETE FROM products;')
+        .then(() => console.log("Delete products_temp"))
+        .catch(() => console.log("Error while deleting from table products_temp"));
     return res.json({finished: true});
 };
