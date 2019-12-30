@@ -17,8 +17,9 @@ module.exports = async function (req, res) {
                     + "\"" + review.name.replace(/"/g, '\'') + "\"" + "\n";
             });
             console.log("Generating CSV file");
-            res.setHeader('Content-disposition', 'attachment; filename=exported_csv.csv');
+            res.setHeader('Content-disposition', 'attachment; filename=Database.csv');
             res.set('Content-Type', 'text/csv');
+            res.status(200).send(exported_csv);
         })
         .catch(function () {
                 console.log("Error while selecting from reviews");
