@@ -1,5 +1,6 @@
 const app = require("express")();
 const routes = require("./routes/routes.js");
+const frontend = require('./frontend');
 
 const config = {
     port: 3000
@@ -24,3 +25,4 @@ const server = app.listen(config.port, function (err) {
     console.log("server online at port " + config.port);
 });
 
+frontend.start();
