@@ -961,7 +961,7 @@ let DataTableComponentComponent = class DataTableComponentComponent {
             "upvotes",
             "downvotes",
             "date",
-            "reviewedAfter",
+            "reviewedafter",
             "content",
             "reviewerboughtproduct",
             "productid",
@@ -1092,7 +1092,7 @@ DataTableComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         </th>
         <td mat-cell *matCellDef="let review">{{ review.date | date }}</td>
       </ng-container>
-      <ng-container matColumnDef="reviewedAfter">
+      <ng-container matColumnDef="reviewedafter">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           Oceniono po dniach
         </th>
