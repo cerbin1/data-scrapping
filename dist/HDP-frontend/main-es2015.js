@@ -477,7 +477,7 @@ let ControlsComponent = class ControlsComponent {
             }
         });
         setTimeout(() => {
-            document.getElementById('input').click();
+            document.getElementById("input").click();
         }, 0);
     }
     onFullProcessClick() {
@@ -576,6 +576,8 @@ let ControlsComponent = class ControlsComponent {
     clearDb() {
         this.reviewService.clearDatabase().toPromise();
         this.etlData.emit(null);
+        this.isTransformDisabled = true;
+        this.isLoadDisabled = true;
     }
     viewData() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {

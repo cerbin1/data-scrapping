@@ -947,7 +947,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           });
           setTimeout(function () {
-            document.getElementById('input').click();
+            document.getElementById("input").click();
           }, 0);
         }
       }, {
@@ -1136,6 +1136,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function clearDb() {
           this.reviewService.clearDatabase().toPromise();
           this.etlData.emit(null);
+          this.isTransformDisabled = true;
+          this.isLoadDisabled = true;
         }
       }, {
         key: "viewData",
