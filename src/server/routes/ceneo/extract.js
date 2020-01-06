@@ -55,7 +55,6 @@ async function clearTables(dbConnector) {
 async function extractStep(dbConnector, phrase, pagesToSearch) {
     await clearTables(dbConnector);
     const scrappedProducts = await extract(phrase, pagesToSearch);
-    // const scrappedProducts = getTestProductWithOpinions();
 
     scrappedProducts.forEach(product => {
         dbConnector.none('INSERT INTO products_temp(id, name, description, rating, price) ' +
