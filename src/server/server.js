@@ -12,9 +12,6 @@ app.all('*', function (req, res, next) {
     next();
 });
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-
 //  Connect all our routes to our application
 app.use("/", routes);
 
